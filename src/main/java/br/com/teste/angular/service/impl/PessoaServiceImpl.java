@@ -34,7 +34,8 @@ public class PessoaServiceImpl implements PessoaService {
 			be.addMensagem("O nome eh um dado obrigatorio.");
 
 		}
-		if (pessoa.getNome().trim().length() <= 1 || pessoa.getNome().trim().length() >= 50) {
+		if (pessoa.getNome() != null
+				&& (pessoa.getNome().trim().length() <= 1 || pessoa.getNome().trim().length() >= 50)) {
 			be.addMensagem("O nome da pessoa deve estar entre 2 e 50 caracteres.");
 
 		}

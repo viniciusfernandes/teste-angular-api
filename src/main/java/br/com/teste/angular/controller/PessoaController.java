@@ -39,7 +39,7 @@ public class PessoaController {
 			return new ResponseEntity<>(new ResponseJson(pessoaService.inserirPessoa(pessoa)), HttpStatus.OK);
 		} catch (BusinessException e) {
 			logger.log(Level.WARNING, "Regra de negocio: falha na inclusao de pessoa");
-			return new ResponseEntity<>(e.getListaMessagem(), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(e.getListaMessagem(), HttpStatus.BAD_REQUEST);
 		}
 	}
 
