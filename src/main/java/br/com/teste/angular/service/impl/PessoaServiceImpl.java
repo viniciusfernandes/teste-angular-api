@@ -1,5 +1,6 @@
 package br.com.teste.angular.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ public class PessoaServiceImpl implements PessoaService {
 	@Override
 	public List<Pessoa> pesquisarPessoaByNome(String nome) {
 		return pessoaDAO.pesquisarPessoaByNome(nome);
+
 	}
 
 	@Override
@@ -50,7 +52,13 @@ public class PessoaServiceImpl implements PessoaService {
 
 	@Override
 	public List<Pessoa> pesquisarPessoa() {
-		return pessoaDAO.pesquisarPessoa();
+		// return pessoaDAO.pesquisarPessoa();
+		List<Pessoa> l = new ArrayList<>();
+		l.add(new Pessoa("vinicius", 43, "3"));
+		l.add(new Pessoa("carlos", 22, "33"));
+		l.add(new Pessoa("marcio", 11, "4"));
+		l.add(new Pessoa("beto", 66, "43"));
+		return l;
 	}
 
 }

@@ -16,6 +16,15 @@ public class Pessoa implements Serializable {
 	@Id
 	private String id;
 
+	public Pessoa() {
+	}
+
+	public Pessoa(String nome, int idade, String id) {
+		this.nome = nome;
+		this.idade = idade;
+		this.id = id;
+	}
+
 	public String getId() {
 		return id;
 	}
